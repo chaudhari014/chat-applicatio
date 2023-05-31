@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="chat.css">
+</head>
+
+<body>
+    
+    <h2 class="title">Chat Application Made by Rahul</h2>
+    <div class="main">
+        <div class="name">
+            <span><i class="far fa-user"></i></span>
+            <input type="text" class="name-input" id="name-input" value="Undefined" maxlength="20">
+        </div>
+        <ul class="message-container" id="message-container">
+            <li class="message-left">
+                <p class="message">rahul chaudhari
+                    <span>name time zone</span>
+                </p>
+
+            </li>
+            <li class="message-right">
+                <p class="message">rahul chaudhari
+                    <span>name time zone</span>
+                </p>
+
+            </li>
+            <li class="message-feedback">
+                <p class="feedback" id="feedback">name typing a message..</p>
+            </li>
+        </ul>
+        <form class="message-form" id="message-form">
+            <input type="text" class="message-input" id="message-input">
+            <div class="v-diveder"></div>
+            <button class="send-button" type="submit">Send <span><i class="fas fa-paper-plane"></i></span></button>
+        </form>
+    </div>
+
+
+    </div>
+    <h2 id="connect-user">Total user: 0</h2>
+</body>
+
+</html>
+
+
+<script src="https://cdn.socket.io/4.6.0/socket.io.min.js"
+    integrity="sha384-c79GN5VsunZvi+Q/WObgk2in0CbZsHnjEqvFxC5DxHn9lTfNce2WW6h2pH6u/kF+"
+    crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+<script src="main.js">
+
+</script>
