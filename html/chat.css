@@ -109,3 +109,7 @@ body{
     background-color: #fff;
     cursor: pointer;
 }
+.uploadImage:hover{
+    background-color: red;
+    cursor: pointer;
+}

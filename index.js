@@ -4,8 +4,33 @@ const http = require("http").createServer(app)
 const { Server } = require("socket.io")
 const path = require("path")
 const io = new Server(http)
+const multer  = require('multer')
 
-app.use(express.static((__dirname)))
+app.use(express.static(path.join(__dirname,"./html")))
+app.use(express.json())
+
+// --------------------------------------------------------------------
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+      cb(null, './uploads')
+    },
+    filename: function (req, file, cb) {
+      cb(null, file.originalname)
+    }
+  })
+  
+  const upload = multer({ storage: storage })
+
+  app.post("/upload",upload.single("file"),(req,res)=>{
+    
+    res.send({msg:"file uploaded successfully",imageName:req.file.filename})
+  })
+
+
+
+// ------------------------------------------------------------------------------------------
+
+
 
 const client_data = new Set()
 
@@ -28,7 +53,19 @@ function onConnect(socket) {
         socket.broadcast.emit("live",data)
     })
 
+    socket.on("image",(data)=>{
+        console.log(data)
+        socket.broadcast.emit("upload-image",data)
+    })
+
 }
+
+
+
+
+
+
+
 
 http.listen(7040, () => {
     console.log("server started")
