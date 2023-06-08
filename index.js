@@ -9,7 +9,7 @@ const multer  = require('multer')
 app.use(express.static(path.join(__dirname,"./html")))
 app.use(express.json())
 
-app.get("/add",(req,res)=>{
+app.get("/",(req,res)=>{
   res.send({"msg":"successfully"})
 })
 
