@@ -9,6 +9,10 @@ const multer  = require('multer')
 app.use(express.static(path.join(__dirname,"./html")))
 app.use(express.json())
 
+app.get("/add",(req,res)=>{
+  res.send({"msg":"successfully"})
+})
+
 // --------------------------------------------------------------------
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
