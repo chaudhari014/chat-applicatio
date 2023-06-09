@@ -9,14 +9,14 @@ const multer  = require('multer')
 app.use(express.static(path.join(__dirname,"./html")))
 app.use(express.json())
 
-app.get("/",(req,res)=>{
-  res.send({"msg":"successfully"})
-})
+// app.get("/",(req,res)=>{
+//   res.send({"msg":"successfully"})
+// })
 
-// --------------------------------------------------------------------
+// --------------------------------------------------------
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-      cb(null, './uploads')
+      cb(null, './html/uploads')
     },
     filename: function (req, file, cb) {
       cb(null, file.originalname)
